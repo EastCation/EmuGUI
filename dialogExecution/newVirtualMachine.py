@@ -27,6 +27,7 @@ import translations.ru
 import translations.pt
 import translations.it
 import translations.pl
+import translations.zhcn
 import locale
 import plugins.pluginmgr.hw_reader as hwpr # HWPR = HardWare Plug-in Reader
 import services.pathfinder as pf
@@ -227,6 +228,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "zhcn":
+                    langmode = "zhcn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -299,6 +303,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("it"):
                 translations.it.translateNewVmIT(self)
 
+            elif languageToUse.startswith("zhcn"):
+                translations.zhcn.translateNewVmCN(self)
+
             else:
                 translations.en.translateNewVmEN(self)
 
@@ -355,6 +362,9 @@ class NewVirtualMachineDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateNewVmIT(self)
+
+                    elif languageToUse.startswith("zhcn"):
+                        translations.zhcn.translateNewVmCN(self)
 
                     else:
                         translations.en.translateNewVmEN(self)

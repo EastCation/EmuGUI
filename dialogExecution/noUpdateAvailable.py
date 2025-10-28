@@ -13,6 +13,7 @@ import sqlite3
 import translations.de
 import translations.uk
 import translations.en
+import translations.zhcn
 import locale
 
 class NoUpdateAvailable(QDialog, Ui_Dialog):
@@ -70,6 +71,9 @@ class NoUpdateAvailable(QDialog, Ui_Dialog):
                 elif result[0][1] == "uk":
                     langmode = "uk"
 
+                elif result[0][1] == "zhcn":
+                    langmode = "zhcn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -98,6 +102,9 @@ class NoUpdateAvailable(QDialog, Ui_Dialog):
             elif languageToUse.startswith("uk"):
                 translations.uk.translateNoUpdateAvailableUK(self)
 
+            elif languageToUse.startswith("zhcn"):
+                translations.zhcn.translateNoUpdateAvaliableCN(self)
+
             else:
                 translations.en.translateNoUpdateAvailableEN(self)
         
@@ -119,6 +126,9 @@ class NoUpdateAvailable(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("uk"):
                         translations.uk.translateNoUpdateAvailableUK(self)
+
+                    elif languageToUse.startswith("zhcn"):
+                        translations.zhcn.translateNoUpdateAvaliableCN(self)
 
                     else:
                         translations.en.translateNoUpdateAvailableEN(self)

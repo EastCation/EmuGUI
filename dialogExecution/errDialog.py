@@ -21,6 +21,7 @@ import translations.ru
 import translations.pt
 import translations.it
 import translations.pl
+import translations.zhcn
 import locale
 import sqlite3
 import services.pathfinder as pf
@@ -140,6 +141,9 @@ class ErrDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "pl":
                     langmode = "pl"
 
+                elif result[0][1] == "zh_cn":
+                    langmode = "zh_cn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -195,6 +199,9 @@ class ErrDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("it"):
                 translations.it.translateErrDialogIT(self, self.vmSpecs[0])
 
+            elif languageToUse.startswith("zh_cn"):
+                translations.zhcn.translateErrDialogCN(self, self.vmSpecs[0])
+
             else:
                 translations.en.translateErrDialogEN(self, self.vmSpecs[0])
         
@@ -243,6 +250,9 @@ class ErrDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateErrDialogIT(self, self.vmSpecs[0])
+
+                    elif languageToUse.startswith("zh_cn"):
+                        translations.zhcn.translateErrDialogCN(self, self.vmSpecs[0])
 
                     else:
                         translations.en.translateErrDialogEN(self, self.vmSpecs[0])

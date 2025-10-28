@@ -24,6 +24,7 @@ import translations.ru
 import translations.pt
 import translations.it
 import translations.pl
+import translations.zhcn
 import locale
 import errors.logman
 import errors.logID
@@ -145,6 +146,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "zh_cn":
+                    langmode = "zh_cn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -217,6 +221,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
             elif languageToUse.startswith("it"):
                 translations.it.translateEditVMIT(self, self.vmSpecs[0])
 
+            elif languageToUse.startswith("zhcn"):
+                translations.zhcn.translateEditVMCN(self, self.vmSpecs[0])
+
             else:
                 translations.en.translateEditVMEN(self, self.vmSpecs[0])
 
@@ -270,6 +277,9 @@ class EditVMNewDialog(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("pl"):
                         translations.pl.translateEditVMPL(self, self.vmSpecs[0])
+
+                    elif languageToUse.startswith("zhcn"):
+                        translations.zhcn.translateEditVMCN(self, self.vmSpecs[0])
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateEditVMIT(self, self.vmSpecs[0])

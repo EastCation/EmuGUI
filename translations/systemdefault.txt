@@ -1,4 +1,5 @@
 System default
+系统缺省
 Systemstandard
 По умолчанию системы
 Па змаўчанні сістэмы

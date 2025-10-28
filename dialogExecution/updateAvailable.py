@@ -17,6 +17,7 @@ import translations.en
 import translations.be
 import translations.cz
 import translations.ru
+import translations.zhcn
 import locale
 
 class UpdateAvailable(QDialog, Ui_Dialog):

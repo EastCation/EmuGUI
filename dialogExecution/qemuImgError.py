@@ -20,6 +20,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import translations.it
+import translations.zhcn
 import locale
 import sqlite3
 
@@ -107,6 +108,9 @@ class QemuImgMissing(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "zh_cn":
+                    langmode = "zh_cn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -158,6 +162,9 @@ class QemuImgMissing(QDialog, Ui_Dialog):
 
             elif languageToUse.startswith("it"):
                 translations.it.translateQemuImgMissingIT(self)
+
+            elif languageToUse.startswith("zh_cn"):
+                translations.zhcn.translateQemuImgMissingCN(self)
 
             else:
                 translations.en.translateQemuImgMissingEN(self)

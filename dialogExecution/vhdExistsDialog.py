@@ -21,6 +21,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import translations.it
+import translations.zhcn
 import locale
 
 class VhdAlreadyExists(QDialog, Ui_Dialog):
@@ -132,6 +133,9 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "zh_cn":
+                    langmode = "zh_cn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -184,6 +188,9 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
             elif languageToUse.startswith("it"):
                 translations.it.translateVhdExistsIT(self)
 
+            elif languageToUse.startswith("zh_cn"):
+                translations.zhcn.translateVhdExistsCN(self)
+
             else:
                 translations.en.translateVhdExistsEN(self)
         
@@ -229,6 +236,9 @@ class VhdAlreadyExists(QDialog, Ui_Dialog):
 
                     elif languageToUse.startswith("it"):
                         translations.it.translateVhdExistsIT(self)
+
+                    elif languageToUse.startswith("zh_cn"):
+                        translations.zhcn.translateVhdExistsCN(self)
 
                     else:
                         translations.en.translateVhdExistsEN(self)

@@ -15,7 +15,7 @@ import sqlite3
 import subprocess
 from PySide6.QtCore import QDateTime
 from random import randint
-import magic
+#import magic
 import translations.de
 import translations.uk
 import translations.en
@@ -28,6 +28,7 @@ import translations.ru
 import translations.pt
 import translations.it
 import translations.pl
+import translations.zhcn
 import locale
 import errors.errCodes
 from dialogExecution.errDialog import ErrDialog
@@ -168,6 +169,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
                 elif result[0][1] == "it":
                     langmode = "it"
 
+                elif result[0][1] == "zhcn":
+                    langmode = "zhcn"
+
                 elif result[0][1] == "system":
                     langmode = "system"
 
@@ -222,6 +226,9 @@ class StartVirtualMachineDialog(QDialog, Ui_Dialog):
 
             elif languageToUse.startswith("it"):
                 translations.it.translateStartVmIT(self, self.vmSpecs[0])
+
+            elif languageToUse.startswith("zhcn"):
+                translations.zhcn.translateStartVmCN(self, self.vmSpecs[0])
 
             else:
                 translations.en.translateStartVmEN(self, self.vmSpecs[0])

@@ -21,6 +21,7 @@ import translations.cz
 import translations.ru
 import translations.pt
 import translations.it
+import translations.zhcn
 import locale
 
 class VmIsMadeWithTooYoungEmuGUI(QDialog, Ui_Dialog):
